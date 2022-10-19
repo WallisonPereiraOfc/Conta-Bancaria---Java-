@@ -62,6 +62,7 @@ public class AgenciaBancaria {
 
             System.out.println("email:");
             String email = sc.next();
+            sc.nextLine();
 
             System.out.println("cpf:");
             String cpf = sc.next();
@@ -97,7 +98,6 @@ public class AgenciaBancaria {
                 System.out.println("qual valor deseja depositar:");
                 Double valorDepositado = sc.nextDouble();
                 conta.depositar(valorDepositado);
-                System.out.println("valor depositado com sucesso!");
 
             } else {
                 System.out.println("conta não encontrada!");
