@@ -8,6 +8,22 @@ public class Conta {
 
     private int numeroDaConta;
 
+    public static int getContadorDeContas() {
+        return contadorDeContas;
+    }
+
+    public static void setContadorDeContas(int contadorDeContas) {
+        Conta.contadorDeContas = contadorDeContas;
+    }
+
+    public int getNumeroDaConta() {
+        return numeroDaConta;
+    }
+
+    public void setNumeroDaConta(int numeroDaConta) {
+        this.numeroDaConta = numeroDaConta;
+    }
+
     private double saldo = 0;
 
 
@@ -38,15 +54,16 @@ public class Conta {
 
     public String toString() {
         return "Conta:" +
-                "/nnumeroDaConta" + this.numeroDaConta +
-                "/npessoa=" + this.getPessoa() +
-                "/nsaldo=" + this.getSaldo() +
-                "/nemail=" + this.pessoa.getEmail();
+                "\nNumero Da Conta" + this.numeroDaConta +
+                "\nPessoa=" + this.getPessoa() +
+                "\nSaldo=" + this.getSaldo() +
+                "\nEmail=" + this.pessoa.getEmail();
+
 
 
     }
 
-    public void Depositar(Double valor){
+    public void depositar(Double valor){
         if(valor > 0){
             setSaldo(getSaldo() + valor);
             System.out.println("saldo adicionado com sucesso!");
@@ -55,7 +72,7 @@ public class Conta {
         }
     }
 
-    public void Sacar(Double valor){
+    public void sacar(Double valor){
         if (valor >0 && this.getSaldo() >= valor){
             System.out.println("parabens você sacou!");
             setSaldo(getSaldo() - valor);
@@ -64,7 +81,7 @@ public class Conta {
         }
     }
 
-    public void Transferir(Conta contaTrans , Double valor) {
+    public void transferir(Conta contaTrans , Double valor) {
         if (valor > 0 && this.getSaldo() >= valor) {
             setSaldo(getSaldo() - valor);
             contaTrans.saldo = contaTrans.getSaldo() + valor;
@@ -73,5 +90,9 @@ public class Conta {
             System.out.println("transferir não foi possível!");
         }
 
+
     }
+
+
+
     }
