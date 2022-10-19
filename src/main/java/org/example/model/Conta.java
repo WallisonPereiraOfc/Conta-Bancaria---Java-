@@ -41,8 +41,37 @@ public class Conta {
                 "/nnumeroDaConta" + this.numeroDaConta +
                 "/npessoa=" + this.getPessoa() +
                 "/nsaldo=" + this.getSaldo() +
-                "/nemail=" + pessoa.getEmail();
+                "/nemail=" + this.pessoa.getEmail();
 
 
     }
-}
+
+    public void Depositar(Double valor){
+        if(valor > 0){
+            setSaldo(getSaldo() + valor);
+            System.out.println("saldo adicionado com sucesso!");
+        }else {
+            System.out.println("saldo recusado!");
+        }
+    }
+
+    public void Sacar(Double valor){
+        if (valor >0 && this.getSaldo() >= valor){
+            System.out.println("parabens você sacou!");
+            setSaldo(getSaldo() - valor);
+        }else {
+            System.out.println("sacar não foi possível!");
+        }
+    }
+
+    public void Transferir(Conta contaTrans , Double valor) {
+        if (valor > 0 && this.getSaldo() >= valor) {
+            setSaldo(getSaldo() - valor);
+            contaTrans.saldo = contaTrans.getSaldo() + valor;
+            System.out.println("transferir não foi possível!");
+        }else {
+            System.out.println("transferir não foi possível!");
+        }
+
+    }
+    }
