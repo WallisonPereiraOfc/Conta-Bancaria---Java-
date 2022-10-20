@@ -38,11 +38,12 @@ public class Pessoa {
     }
 
 
+
     public String toString() {
-        return "Conta:" +
-                "/nnome='" + this.getNome()  +
-                "/nemail='" + this.getEmail()  +
-                "/ncpf='" + this.getCpf();
+        return "\nConta " +
+                "\nnome= " + this.getNome()  +
+                "\nemail= " + this.getEmail()  +
+                "\ncpf= " + this.getCpf();
     }
 
     public Pessoa(String nome, String email, String cpf) {

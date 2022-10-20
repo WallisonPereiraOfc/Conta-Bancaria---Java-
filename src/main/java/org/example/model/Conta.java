@@ -8,6 +8,8 @@ public class Conta {
 
     private int numeroDaConta;
 
+    private double saldo = 0;
+
     public static int getContadorDeContas() {
         return contadorDeContas;
     }
@@ -24,7 +26,7 @@ public class Conta {
         this.numeroDaConta = numeroDaConta;
     }
 
-    private double saldo = 0;
+
 
 
     Pessoa pessoa = new Pessoa();
@@ -53,11 +55,10 @@ public class Conta {
 
 
     public String toString() {
-        return "Conta:" +
-                "\nNumero Da Conta" + this.numeroDaConta +
-                "\nPessoa=" + this.getPessoa() +
-                "\nSaldo=" + this.getSaldo() +
-                "\nEmail=" + this.pessoa.getEmail();
+        return "\nNumero Da Conta: " + this.numeroDaConta +
+                ""+ this.getPessoa() +
+                "\nSaldo= " + this.getSaldo() +
+                "\nEmail= " + this.pessoa.getEmail();
 
 
 
